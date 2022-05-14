@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import mimetypes
 import os
 from datetime import timedelta
 from pathlib import Path
@@ -192,3 +193,5 @@ options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+mimetypes.add_type("text/css", ".css", True)
